@@ -60,3 +60,4 @@ FROM staging.joined_table j
 JOIN staging.status s ON j.order_status = s.order_status
 -- ORDER BY j.order_status DESC;
 ORDER BY j.order_status ASC; 
+
