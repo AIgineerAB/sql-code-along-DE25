@@ -62,11 +62,13 @@ WHERE "Country/Region" = 'Sweden'; -- note the use of single and double quotatio
 SELECT 
   date_part('year', to_timestamp(sunriseTime)) AS year,
   date_part('month', to_timestamp(sunriseTime)) AS month,
-  ROUND(MAX(sunsetTime-sunriseTime)/3600) AS gap_hours -- divide by 3600 to show the gap in hours
+  MAX(to_timestamp(sunriseTime)) AS sunrise_largest_gap_date, -- MAX() will pick up the first row
+  MAX(to_timestamp(sunsetTime)) AS sunset_largest_gap_date, -- MAX() will pick up the first row
+  MAX(ROUND((sunsetTime-sunriseTime)/3600)) AS gap_hours,
 FROM staging.weather
 WHERE "Country/Region" = 'Sweden'
 GROUP BY year, month
-ORDER BY year, month;
+ORDER BY year, month, gap_hours DESC; -- make sure the date with the largest gap is always the first row for each year-month
 
 /* ========
    Task 6
