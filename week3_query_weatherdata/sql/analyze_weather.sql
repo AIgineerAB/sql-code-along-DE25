@@ -51,3 +51,42 @@ SELECT
   to_timestamp(sunsetTime) AT TIME ZONE 'Europe/Stockholm' AS sunset_swtime,
 FROM staging.weather
 WHERE "Country/Region" = 'Sweden'; -- note the use of single and double quotations
+
+/* =======
+   Task 5
+   ======= */
+
+-- the new year and month columns involves subtracting a part of timestamp
+-- to pick up the date with the largest gap within a month involves the use of aggregation function
+-- the gaps can be calculated directly with UNIX time
+SELECT 
+  date_part('year', to_timestamp(sunriseTime)) AS year,
+  date_part('month', to_timestamp(sunriseTime)) AS month,
+  ROUND(MAX(sunsetTime-sunriseTime)/3600) AS gap_hours -- divide by 3600 to show the gap in hours
+FROM staging.weather
+WHERE "Country/Region" = 'Sweden'
+GROUP BY year, month
+ORDER BY year, month;
+
+/* ========
+   Task 6
+   =======  */
+
+-- concatenate integer and string
+SELECT 
+  to_timestamp(windGustTime) AT TIME ZONE 'Europe/Stockholm' AS most_windy_timestamp,
+  date_part('hour', most_windy_timestamp) AS most_windy_hour,
+  CONCAT('It''s dangerous to use the crane at kl.', most_windy_hour)
+FROM staging.weather
+WHERE "Country/Region" = 'Sweden'; 
+
+-- concatenate string and string
+SELECT 
+  to_timestamp(windGustTime) AT TIME ZONE 'Europe/Stockholm' AS most_windy_timestamp,
+  -- strftime(), string format time, transforms timestamp to string
+  -- use the format, like '%H', to design the presentation
+  -- strptime(), string parse time, transform string to timestamp 
+  strftime(most_windy_timestamp, '%H') AS most_windy_hour, 
+  CONCAT('It''s dangerous to use the crane at kl.', most_windy_hour)
+FROM staging.weather
+WHERE "Country/Region" = 'Sweden'; 
