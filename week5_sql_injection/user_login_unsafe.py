@@ -1,15 +1,18 @@
 import duckdb
 from constants import DB_PATH
 
+username = input("Enter username: ")
+password = input("Enter password: ")
+
 with duckdb.connect(str(DB_PATH)) as conn:
-    result = conn.execute("""
+    result = conn.execute(f"""
         SELECT 
             *
         FROM 
             users
         WHERE
-            username = 'bob_the_builder' AND
-            password = 'construction99'
+            username = '{username}' AND
+            password = '{password}'
     """)
     # if the password is correct 
     # we will get back a record in the list -> truthy
