@@ -1,4 +1,13 @@
 # In-class exercise, week 2
+
+
+> [!TIP]
+> - Mob programming in a group of 2-3 classmates
+> - Discuss coding and help each others
+> - Benefits:
+>   - Check your understanding of the chapters
+>   - Improve skills for technical interviews 
+
 This exercise covers knowledge in chapter 6 & 7. The background is that you are a data engineer responsible for the HR data of a company. Write SQL queries to respond to stakeholders' requirements below:
 
 ## Task 1
