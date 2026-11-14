@@ -3,6 +3,7 @@
 > [!TIP]
 > - Mob programming in a group of 2-3 classmates
 > - Discuss coding and help each others
+> Avoid using AI for solving the entire questions
 > - Benefits:
 >   - Check your understanding of the chapters
 >   - Improve skills for technical interviews 
