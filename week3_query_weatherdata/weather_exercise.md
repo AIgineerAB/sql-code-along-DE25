@@ -12,7 +12,7 @@ This exercise covers knowledge in chapter 9 and previous chapters. The backgroun
 
 Your manager wants you to show some EDA from a sample weather data to understand what can be analyzed from weather data, before adding weather data to the existing database with other operational data. 
 
-You will need to make sure of TIMESTAMP With TIME ZONE functions of DuckDB. Check more on this [here](https://duckdb.org/docs/stable/sql/functions/timestamptz). 
+You will need to make use of TIMESTAMP With TIME ZONE functions of DuckDB. Check more on this [here](https://duckdb.org/docs/stable/sql/functions/timestamptz). 
 
 Follow the tasks below: 
 
