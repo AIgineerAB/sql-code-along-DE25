@@ -1,4 +1,13 @@
 # In-class exercise, week 3
+
+> [!TIP]
+> - Mob programming in a group of 2-3 classmates
+> - Discuss coding and help each others
+> Avoid using AI for solving the entire questions
+> - Benefits:
+>   - Check your understanding of the chapters
+>   - Improve skills for technical interviews 
+
 This exercise covers knowledge in chapter 10, 11 and previous chapters. The background is that your company is migrating the [CRM](https://sv.wikipedia.org/wiki/Customer_relationship_management) system. Before retiring the old CRM system completely, your company would like to check if both systems contain the same customers. In addition, data in both systems can have invalid values. 
 
 Your responsibility is to validate data quality and compare system consistency. Follow the tasks below: 
